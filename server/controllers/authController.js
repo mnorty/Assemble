@@ -37,8 +37,8 @@ module.exports = {
     const db = req.app.get('db')
     const {session} = req
     if(session.user){
-      const details = await db.get_user_details({id: session.user.id})
-      const {firstname,email,balance,user_id} = details[0]
+      const details = await db.get_user_details({id: session.users.id})
+      const {username,email,balance,id} = details[0]
       return res
         .status(200)
         .send({firstname,

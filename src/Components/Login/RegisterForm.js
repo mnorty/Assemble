@@ -14,9 +14,9 @@ class RegisterForm extends Component {
 
 	handleUserRegister = (e) => {
 		e.preventDefault()
-		const { firstname, lastname, email, username, password } = this.state
+		const {email, username, password } = this.state
 		axios
-			.post('/auth/register', { firstname, lastname, email, username, password })
+			.post('/auth/register', {email, username, password })
 			.then((res) => {
 				this.props.history.push('/details')
 			})
