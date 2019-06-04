@@ -36,7 +36,6 @@ class RegisterForm extends Component {
 	render() {
 		return (
 			<>
-				<h1></h1>
 				<form onSubmit={this.handleUserRegister}>
 					<input
 						type='text'

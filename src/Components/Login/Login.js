@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { updateUser } from '../../redux/userReducer'
 import { connect } from 'react-redux'
-import RegisterForm from './RegisterForm'
 import LoginForm from './LoginForm'
 
 class Login extends Component {
