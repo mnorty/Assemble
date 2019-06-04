@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {updateUser} from '../redux/userReducer';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom'
 
 class Login extends Component {
   constructor(){
@@ -43,7 +44,7 @@ class Login extends Component {
     console.log('this.state',this.state)
     return (
       <div>
-        <h1>Login</h1>
+        <h1>Welcome to Assemble</h1>
         <form onSubmit={this.handleUserLogin}>
           <input 
             type="text" 
@@ -57,8 +58,12 @@ class Login extends Component {
             placeholder='password'
             onChange={this.handleLoginInfoUpdate}
           />
-          <button>Log In</button>
+          <button>Log In!</button>
         </form>
+        <p>Not a member yet? 
+
+        <Link to='/Register'> Register Here</Link>
+        </p>
       </div>
     )
   }

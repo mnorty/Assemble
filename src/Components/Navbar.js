@@ -16,7 +16,6 @@ const Navbar = () => {
         </button>
         <div className="dropdown-content">
         <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
         <Link to="/Register">Register</Link>
         <Link to="/Details">Details</Link>
         </div>
