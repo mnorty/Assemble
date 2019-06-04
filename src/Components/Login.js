@@ -12,13 +12,13 @@ class Login extends Component {
     }
   }
 
-  componentDidMount(){
-    axios.get('/auth/user').then((res) => {
-      console.log('Data from axios',res.data)
-      this.props.updateUser(res.data)
-      this.props.history.push('/details')
-    })
-  }
+  // componentDidMount(){
+  //   axios.get('/auth/user').then((res) => {
+  //     console.log('Data from axios',res.data)
+  //     this.props.updateUser(res.data)
+  //     this.props.history.push('/details')
+  //   })
+  // }
 
   handleLoginInfoUpdate = (e) => {
     this.setState({

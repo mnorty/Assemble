@@ -18,7 +18,7 @@ app.use(session({
 
 massive(CONNECTION_STRING).then((db) => {
   app.set('db',db) // the 'db' is us choosing the name, and the database is the information, which matches the response from .then above.
-  console.log('All your Database are now belong to us')
+  console.log('All your Database are now belong to us',db.listTables())
   app.listen(SERVER_PORT, () => console.log(`listening on port:${SERVER_PORT}`))
 })
 
