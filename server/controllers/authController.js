@@ -17,6 +17,7 @@ module.exports = {
     })
     session.user = {id: createdUser[0].id, username: createdUser[0].username}
     res.status(201).send(session.user)
+    console.log('registration succsesful')
   },
   login: async (req,res) => {
     const {username, password} = req.body
