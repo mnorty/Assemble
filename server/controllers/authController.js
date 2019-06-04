@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
   register: async (req,res) => {
-    const {firstname,lastname,email,username,password} = req.body
+    const {email,username,password} = req.body
     const db = req.app.get('db')
     const {session} = req
     const userFound = await db.check_user_email({email})//passing that in as an object lets us use its name in the sql command
@@ -10,13 +10,12 @@ module.exports = {
     const salt = bcrypt.genSaltSync(10)
     const hash = bcrypt.hashSync(password,salt)
     const createdUser = await db.register_user({
-      firstname,
-      lastname,
+      
       email,
       username,
       password: hash  //if we dont add the : hash it would pull the plain unencrypted password
     })
-    session.user = {id: createdUser[0].login_id, username: createdUser[0].username}
+    session.user = {id: createdUser[0].id, username: createdUser[0].username}
     res.status(201).send(session.user)
   },
   login: async (req,res) => {
