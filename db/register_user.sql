@@ -1,9 +1,6 @@
-insert into balances(balance)
-values(0);
+insert into users(username,password,email)
+values(${username}, ${password},${email});
 
-insert into users(firstname,lastname,email)
-values(${firstname}, ${lastname},${email});
-
-insert into user_login(username,password)
+insert into users(username,password)
 values(${username},${password})
-returning username, login_id;
+returning username, id;
