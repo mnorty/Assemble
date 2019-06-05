@@ -14,7 +14,7 @@ export function updateUser(user){
   }
 }
 
-export function claerUser(){
+export function clearUser(){
   return{
     type:CLEAR_USER
   }
