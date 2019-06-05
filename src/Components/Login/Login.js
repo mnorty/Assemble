@@ -3,6 +3,7 @@ import axios from 'axios'
 import { updateUser } from '../../redux/userReducer'
 import { connect } from 'react-redux'
 import LoginForm from './LoginForm'
+import './Login.css'
 
 class Login extends Component {
 	componentDidMount() {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
+import './LoginForm.css'
+import {Link} from 'react-router-dom'
 
 class LoginForm extends Component {
 	constructor() {
@@ -32,24 +34,32 @@ class LoginForm extends Component {
 	}
 	render() {
 		return (
-			<>
+			<div className='loginFormContainer'>
+				<div className='descriptionBox'>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel debitis aspernatur unde in quo officiis asperiores corporis neque eaque eos similique voluptas, pariatur accusamus voluptatum fugiat, earum excepturi autem quia?
+				</div>
 				<h1>Login</h1>
-				<form onSubmit={this.handleUserLogin}>
+				<form onSubmit={this.handleUserLogin} className='loginFields'>
 					<input
+						className='input'
 						type='text'
 						name='username'
 						placeholder='username'
 						onChange={this.handleLoginInfoUpdate}
 					/>
 					<input
+						className='input'
 						type='password'
 						name='password'
 						placeholder='password'
 						onChange={this.handleLoginInfoUpdate}
 					/>
-					<button>Log In</button>
+					<button className='regButton'>Log In</button>
 				</form>
-			</>
+				<h1 className='joinInvite'>Not a Member Yet? Join 
+					<Link to='/register'> Here </Link>
+				</h1>
+			</div>
 		)
 	}
 }
