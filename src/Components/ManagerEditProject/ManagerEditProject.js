@@ -1,11 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-
+import ProjectForm from './EditProjectForm'
 
 const ManagerEditProject = () => {
     return <>
     <h1>
-        Edit Project
+        <ProjectForm/>
     </h1>
     </>
 }
