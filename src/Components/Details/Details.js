@@ -6,8 +6,8 @@ class Details extends Component {
   render(){
     return (
       <div>
-        <h1>Details</h1>,
-        <Link to='/LandingPage' className='Link'>Landing Page</Link>
+        <h1>Welcome User</h1>
+        <Link to='/LandingPage' className='Link'>Current Projects</Link>
         
       </div>
     )

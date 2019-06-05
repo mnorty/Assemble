@@ -2,12 +2,12 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 
-const ManagerCreateTask = () => {
+const UserProjects = () => {
     return <>
     <h1>
-        ManagerCreateTask
+    UserProjects
     </h1>
     </>
 }
 
-export default ManagerCreateTask
+export default UserProjects
