@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
+import './RegisterForm.css'
 
 class RegisterForm extends Component {
 	constructor() {
@@ -36,26 +37,32 @@ class RegisterForm extends Component {
 	render() {
 		return (
 			<>
-				<form onSubmit={this.handleUserRegister}>
+				<form onSubmit={this.handleUserRegister} className='regForm'>
+					<h1>Email:</h1>
 					<input
+						className='input'
 						type='text'
-						placeholder='email'
+						placeholder='Example@email.com'
 						name='email'
 						onChange={this.handleRegisterInfoUpdate}
 					/>
+					<h1>UserName:</h1>
 					<input
+						className='input'
 						type='text'
-						placeholder='username'
+						placeholder='What"s your Alias?'
 						name='username'
 						onChange={this.handleRegisterInfoUpdate}
 					/>
+					<h1>Password:</h1>
 					<input
+						className='input'
 						type='password'
-						placeholder='password'
+						placeholder='Super Secret Shhhhh'
 						name='password'
 						onChange={this.handleRegisterInfoUpdate}
 					/>
-					<button>Register</button>
+					<button className='regButton'>Register</button>
 				</form>
 			</>
 		)

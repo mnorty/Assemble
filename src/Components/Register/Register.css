@@ -1,0 +1,21 @@
+.registrationContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  background-color:lightgray;
+  min-height: 90vh;
+}
+
+.pageHeader{
+  font-size: 3em;
+}
+.infoBox{
+  Height:25vh;
+  width:80vw;
+  background-color:lightblue;
+  margin-top:2em;
+  border-radius: 10px;
+  margin-bottom:2em;
+  border:solid;
+}
