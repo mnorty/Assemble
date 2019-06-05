@@ -26,7 +26,7 @@ export default (
     <Route path='/YourProject' component={ManagerSpecificProject}/>
     <Route path='/ProjectTask' component={ManagerSpecificTask}/>
     <Route path='/AssignTask' component={ManagerTaskAssign}/>
-    <Route path='/TaskEdit' component={ManagerTaskEdit}/>
-    <Route path='/projects' component={UserProjects}/>
+    <Route path='/EditTask' component={ManagerTaskEdit}/>
+    <Route path='/Projects' component={UserProjects}/>
   </Switch>
 )

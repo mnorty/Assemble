@@ -18,6 +18,15 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/Register">Register</Link>
         <Link to="/Details">Details</Link>
+        <Link to="/CreateProject">Create Project</Link>
+        <Link to="/LandingPage">LandingPage</Link>
+        <Link to="/CreateTask">Create Task</Link>
+        <Link to="/EditProject">Edit Project</Link>
+        <Link to="/YourProject">Your Project</Link>
+        <Link to="/ProjectTask">Project Task</Link>
+        <Link to="/AssignTask">AssignTask</Link>
+        <Link to="/EditTask">Edit Task</Link>
+        <Link to="/Projects">Projects</Link>
         </div>
       {/* <h1 className='logo'>Assemble</h1> */}
 </div>
