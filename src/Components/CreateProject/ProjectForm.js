@@ -15,10 +15,11 @@ class ProjectForm extends Component {
 	handleProjectCreation = (e) => {
 		e.preventDefault()
 		const {description, title, due_date } = this.state
+		console.log(this.state)
 		axios
-			.post('/auth/register', {description, title, due_date })
+			.post('/auth/createproject', {description, title, due_date })
 			.then((res) => {
-				this.props.history.push('/details')
+				this.props.history.push('/landing')
 			})
 			.catch((err) => {
 				console.log(err)
