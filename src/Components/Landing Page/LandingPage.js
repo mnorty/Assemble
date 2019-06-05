@@ -7,11 +7,8 @@ import axios from 'axios';
 class LandingPage extends Component {
 
   handleLogout = () => {
-    console.log('got to handle logout')
 		  axios.get('/auth/logout').then((res) => {
-        console.log('step farther')
       clearUser()
-      console.log('step farther 2')
 			this.props.history.push('/')
 		})
 	}

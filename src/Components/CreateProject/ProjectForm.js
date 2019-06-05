@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
-import './ProjectForm.css'
-import {Link} from 'react-router-dom'
 
-class LoginForm extends Component {
+class ProjectForm extends Component {
 	constructor() {
 		super()
 		this.state = {
@@ -13,61 +11,61 @@ class LoginForm extends Component {
 			description: ''
 		}
 	}
-	handleLoginInfoUpdate = (e) => {
-		this.setState({
-			[e.target.name]: e.target.value
-		})
-	}
 
 	handleProjectCreation = (e) => {
 		e.preventDefault()
-		const { title, due_date,description } = this.state
+		const {description, title, due_date } = this.state
 		axios
-			.post('/auth/login', { title, due_date,description })
+			.post('/auth/register', {description, title, due_date })
 			.then((res) => {
 				this.props.history.push('/details')
 			})
 			.catch((err) => {
 				console.log(err)
 			})
-		e.target.title.value = ''
+		e.target.description.value = ''
 		e.target.due_date.value = ''
+		e.target.title.value = ''
+	}
+
+	handleRegisterInfoUpdate = (e) => {
+		this.setState({
+			[e.target.name]: e.target.value
+		})
 	}
 	render() {
 		return (
-			<div className='loginFormContainer'>
-				
-				<h1>Make a new Project</h1>
-				<form onSubmit={this.handleProjectCreation} className='loginFields'>
-					<h1>Project Name:</h1>
+			<>
+				<form onSubmit={this.handleProjectCreation} className='regForm'>
+					<h1>description:</h1>
 					<input
 						className='input'
 						type='text'
-						name='title'
-						placeholder='title'
-						onChange={this.handleLoginInfoUpdate}
+						placeholder='Enter the Project Description Here'
+						name='description'
+						onChange={this.handleRegisterInfoUpdate}
 					/>
-					<h1>Date:</h1>
+					<h1>title:</h1>
+					<input
+						className='input'
+						type='text'
+						placeholder='Enter Project Name Here'
+						name='title'
+						onChange={this.handleRegisterInfoUpdate}
+					/>
+					<h1>due_date:</h1>
 					<input
 						className='input'
 						type='date'
+						placeholder='Super Secret Shhhhh'
 						name='due_date'
-						onChange={this.handleLoginInfoUpdate}
+						onChange={this.handleRegisterInfoUpdate}
 					/>
-						<h1>Description:</h1>
-						<input
-						className='input'
-						id='description'
-						type='text'
-						name='due_date'
-						placeholder='Description'
-						onChange={this.handleLoginInfoUpdate}
-					/>
-					<button className='regButton'>Create Project</button>
+					<button className='regButton'>Register</button>
 				</form>
-			</div>
+			</>
 		)
 	}
 }
 
-export default withRouter(LoginForm)
+export default withRouter(ProjectForm)
