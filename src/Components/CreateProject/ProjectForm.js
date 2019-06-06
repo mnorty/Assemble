@@ -15,7 +15,6 @@ class ProjectForm extends Component {
 	handleProjectCreation = (e) => {
 		e.preventDefault()
 		const {description, title, due_date } = this.state
-		console.log(this.state)
 		axios
 			.post('/auth/createproject', {description, title, due_date })
 			// .then((res) => {

@@ -64,7 +64,6 @@ module.exports = {
   },
   createproject: async (req,res) => {
     const {title,due_date,description} = req.body
-    console.log('made it to create project',req.body)
     const db = req.app.get('db')
     const userFound = await db.check_project_title({title})//passing that in as an object lets us use its name in the sql command
     if (userFound[0]) return res.status(409).send('title already exists')
@@ -73,6 +72,7 @@ module.exports = {
       due_date,
       description
     })
+    console.log('Project Created',req.body)
   },
 }
 
