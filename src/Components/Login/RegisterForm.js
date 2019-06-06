@@ -18,9 +18,9 @@ class RegisterForm extends Component {
 		const {email, username, password } = this.state
 		axios
 			.post('/auth/register', {email, username, password })
-			.then((res) => {
-				this.props.history.push('/details')
-			})
+			// .then((res) => {
+			// 	this.props.history.push('/details')
+			// })
 			.catch((err) => {
 				console.log(err)
 			})

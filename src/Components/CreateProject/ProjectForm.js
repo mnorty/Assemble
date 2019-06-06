@@ -18,9 +18,9 @@ class ProjectForm extends Component {
 		console.log(this.state)
 		axios
 			.post('/auth/createproject', {description, title, due_date })
-			.then((res) => {
-				this.props.history.push('/landing')
-			})
+			// .then((res) => {
+			// 	this.props.history.push('/landing')
+			// })
 			.catch((err) => {
 				console.log(err)
 			})
@@ -62,7 +62,7 @@ class ProjectForm extends Component {
 						name='due_date'
 						onChange={this.handleRegisterInfoUpdate}
 					/>
-					<button className='regButton'>Register</button>
+					<button className='regButton'>Create Project</button>
 				</form>
 			</>
 		)
