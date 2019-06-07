@@ -1,6 +1,5 @@
 const initialState = {
   username: '',
-  balance: null,
   id: null
 }
 

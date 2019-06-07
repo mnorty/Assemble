@@ -19,7 +19,7 @@ class LandingPage extends Component {
            <header className='PageHeader'>Your Current Projects</header>
             <div className='OwnedProjects'>Owned Projects
               <div className='ProjectDisplay'>
-                <Project/>
+                {/* <Project/> */}
               </div>
               <Link to='/CreateProject'>Create New Project</Link>
               </div>

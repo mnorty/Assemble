@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items:center;
-  background-color:slategray
+  background-color:#1A1B1A
 }
 
 .regForm{
@@ -13,7 +13,7 @@
 }
 
 .descriptionBox{
-  background-color:lightblue;
+  background-color:#A5A5A5;
   margin-top:2em;
   height:30vh;
   width:80vw;
@@ -37,7 +37,7 @@
 
 .regButton{
   height:3em;
-  background-color:lightblue;
+  background-color:#9C1F45;
   border-radius:10px
 }
 

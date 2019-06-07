@@ -3,6 +3,7 @@ import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 import './LoginForm.css'
 import {Link} from 'react-router-dom'
+import swal from '@sweetalert/with-react'
 
 class LoginForm extends Component {
 	constructor() {
@@ -27,6 +28,10 @@ class LoginForm extends Component {
 				this.props.history.push('/details')
 			})
 			.catch((err) => {
+				swal({
+					text: 'Username or Password are incorrect',
+					button: 'Okay'
+				})
 				console.log(err)
 			})
 		e.target.username.value = ''

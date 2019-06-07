@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 import './RegisterForm.css'
+import swal from '@sweetalert/with-react'
 
 class RegisterForm extends Component {
 	constructor() {
@@ -22,6 +23,10 @@ class RegisterForm extends Component {
 			// 	this.props.history.push('/details')
 			// })
 			.catch((err) => {
+				swal({
+					text: 'Username has already been taken',
+					button:'Okay'
+				})
 				console.log(err)
 			})
 		e.target.email.value = ''
