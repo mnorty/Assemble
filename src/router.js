@@ -17,7 +17,7 @@ import UserProjects from './Components/UserProjects/UserProjects'
 export default (
   <Switch>
     <Route exact path='/' component={Login}/>
-    <Route path='/details' component={Details} />
+    {/* <Route path='/details' component={Details} /> */}
     <Route path='/Register' component={Register}/>
     <Route path='/CreateProject' component={CreateProject}/>
     <Route path='/LandingPage' component={LandingPage}/>

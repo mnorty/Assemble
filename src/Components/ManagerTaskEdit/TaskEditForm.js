@@ -25,7 +25,7 @@ class LoginForm extends Component {
 		axios
 			.post('/auth/login', { title, due_date,description })
 			.then((res) => {
-				this.props.history.push('/details')
+				this.props.history.push('/LandingPage')
 			})
 			.catch((err) => {
 				console.log(err)
