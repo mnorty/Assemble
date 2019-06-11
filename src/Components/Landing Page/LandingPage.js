@@ -30,8 +30,10 @@ class LandingPage extends Component {
       return (
         <div>
            <header className='PageHeader'>Your Current Projects</header>
-           <h1>{this.props.username}</h1>
-           <h1>{this.props.id}</h1>
+            <div className='PageHeader' id='intro'>
+              <h1>Welcome {this.props.username}!</h1>
+              <h1>User ID: {this.props.id}</h1>
+            </div>
             <div className='OwnedProjects'>Owned Projects
               <div className='ProjectDisplay'>
                 {/* <Project/> */}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
+import {updateUser} from '../../redux/userReducer'
+import {connect} from 'react-redux'
 
 class ProjectForm extends Component {
 	constructor() {
@@ -8,15 +10,28 @@ class ProjectForm extends Component {
 		this.state = {
 			title: '',
 			due_date: '',
-			description: ''
+			description: '',
+			creator_id: 1
 		}
 	}
 
+	// componentDidMount =  async () =>  {
+  //   await axios
+  //     .get('/auth/details')
+  //     .then((res) => {
+  //       this.props.updateUser(res.data)
+  //     })
+  //     .catch((err) => {
+  //       this.props.history.push('/')
+  //     })
+  // }
+
 	handleProjectCreation = (e) => {
 		e.preventDefault()
-		const {description, title, due_date } = this.state
+		const {description, title, due_date , creator_id} = this.state
+		console.log('CREATOR_ID VALUE:',this.state.creator_id)
 		axios
-			.post('/auth/createproject', {description, title, due_date })
+			.post('/auth/createproject', {description, title, due_date , creator_id })
 			// .then((res) => {
 			// 	this.props.history.push('/landing')
 			// })
@@ -34,6 +49,7 @@ class ProjectForm extends Component {
 		})
 	}
 	render() {
+		console.log(this.props)
 		return (
 			<>
 				<form onSubmit={this.handleProjectCreation} className='regForm'>
@@ -68,4 +84,19 @@ class ProjectForm extends Component {
 	}
 }
 
-export default withRouter(ProjectForm)
+function mapStateToProps(reduxState) {
+	return {
+		username: reduxState.user.username,
+		id: reduxState.user.id
+	}
+}
+
+const mapDispatchToProps = {
+	updateUser
+}
+
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(ProjectForm)
