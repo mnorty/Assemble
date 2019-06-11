@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Card from '../shared/card';
+import Card from '../shared/card';
 import Loading from '../shared/Loading';
 import { connect } from 'react-redux';
 import { requestProjects } from '../../redux/projectReducer';
@@ -13,11 +13,13 @@ class Project extends Component {
   componentDidMount() {
     this.props.requestProjects()
     console.log('Request Projects firing')
+    
+
   }
 
   render() {
-    console.log('PROPS FOR PROJECTS.JS: ', this.props)
     // const Project = this.props.project.map((project => <Card key={project.id} project={project} />))
+    console.log(this.props)
     return (
       <div className='news-container'>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJPIQdUkzKSdWlBXckuUa17xaIL2eeueIF-_X6YHw024EnX7a-" alt="" style={styles.logo} />
@@ -28,7 +30,7 @@ class Project extends Component {
 }
 
 function mapStateToProps(state) {
-  return state.Project;
+  return state.project;
 }
 
 export default connect(mapStateToProps, { requestProjects })(Project);
