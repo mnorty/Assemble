@@ -29,8 +29,4 @@ app.get('/auth/details', auth_ctrl.getDetails)
 app.get('/auth/user', auth_ctrl.getUser)
 app.get('/auth/logout', auth_ctrl.logout)
 
-app.get('/auth/project', (req,res) => {
-  setTimeout(() => {
-    res.status(200).send(project);
-  }, delay)
-})
+app.get('/auth/project', auth_ctrl.getProject)

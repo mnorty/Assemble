@@ -7,6 +7,6 @@ import store from './redux/store'
 
 ReactDOM.render(//provider is what lets the entire app have access to store. All Index.js does is give the entire app access to store, and render App.js
   <Provider store={store}>
-    <App />
+    <App /> 
   </Provider>,
   document.getElementById('root'))

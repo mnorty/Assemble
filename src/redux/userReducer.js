@@ -1,6 +1,6 @@
 const initialState = {
   username: '',
-  id: null
+  id: ''
 }
 
 const UPDATE_USER = 'UPDATE_USER'
@@ -22,8 +22,11 @@ export function clearUser(){
 function reducer(state = initialState, action){
   switch(action.type){
     case UPDATE_USER:
+      const {username,id} = action.payload
       console.log('ACTION PAYLOAD', action.payload)
-      return state
+      return {...state,username,id}
+    case CLEAR_USER:
+      return { ...initialState}
     default:
       return state
   }

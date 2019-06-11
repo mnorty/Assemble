@@ -27,7 +27,7 @@ module.exports = {
     if (!userFound[0]) return res.status(401).send('User does not exist')
     const authenticated = bcrypt.compareSync(password,userFound[0].password)
     if(authenticated){
-      session.user = {id: userFound[0].login_id,username: userFound[0].username}
+      session.user = {id: userFound[0].id,username: userFound[0].username}
       res.status(200).send(session.user)
     } else {
       return res.status(401).send('Incorrect username or password')
@@ -37,15 +37,16 @@ module.exports = {
     const db = req.app.get('db')
     const {session} = req
     if(session.user){
-      const details = await db.get_user_details({id: session.users.id})
-      const {username,email,balance,id} = details[0]
+      const details = await db.get_user_details({id: session.user.id})
+      console.log('got to line 41 in getDetails', session.user.id)
+      const {id} = details[0]
+      console.log(id)
       return res
         .status(200)
-        .send({firstname,
-          email,
-          balance,
-          user_id,
-          username:session.user.username
+        .send({
+          username:session.user.username,
+          id
+        
       })
     }
     return res.status(401).send('Please log in')
@@ -74,5 +75,10 @@ module.exports = {
     })
     console.log('Project Created',req.body)
   },
+
+  getProject: async (req,res) => {
+    console.log('made it to getProject')
+      }
 }
+
 

@@ -1,1 +1,2 @@
-select username,email,id, from users
+select username,id from users
+where id = ${id};

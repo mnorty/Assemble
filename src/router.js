@@ -1,6 +1,6 @@
 import React from 'react'
 import {Switch,Route} from 'react-router-dom'
-import Details from './Components/Details/Details'
+// import Details from './Components/Details/Details'
 import Login from './Components/Login/Login'
 import Register from './Components/Register/Register'
 import LandingPage from'./Components/Landing Page/LandingPage'
