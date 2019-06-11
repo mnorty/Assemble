@@ -5,33 +5,28 @@ import {updateUser} from '../../redux/userReducer'
 import {connect} from 'react-redux'
 
 class ProjectForm extends Component {
+	
 	constructor() {
 		super()
 		this.state = {
 			title: '',
 			due_date: '',
-			description: '',
-			creator_id: 1
+			description: ''
 		}
 	}
 
-	// componentDidMount =  async () =>  {
-  //   await axios
-  //     .get('/auth/details')
-  //     .then((res) => {
-  //       this.props.updateUser(res.data)
-  //     })
-  //     .catch((err) => {
-  //       this.props.history.push('/')
-  //     })
-  // }
+	handleGetCreator_id = () => {
+		this.setState({
+			creator_id: this.props.id
+		})
+	}
 
 	handleProjectCreation = (e) => {
 		e.preventDefault()
-		const {description, title, due_date , creator_id} = this.state
-		console.log('CREATOR_ID VALUE:',this.state.creator_id)
+		const {description, title, due_date} = this.state
+		const {id} = this.props
 		axios
-			.post('/auth/createproject', {description, title, due_date , creator_id })
+			.post('/auth/createproject', {description, title, due_date , creator_id:id})
 			// .then((res) => {
 			// 	this.props.history.push('/landing')
 			// })
@@ -50,6 +45,8 @@ class ProjectForm extends Component {
 	}
 	render() {
 		console.log(this.props)
+		console.log(this.props.id)
+		console.log(this.state.creator_id)
 		return (
 			<>
 				<form onSubmit={this.handleProjectCreation} className='regForm'>
