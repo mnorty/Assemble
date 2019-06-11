@@ -23,7 +23,6 @@ function reducer(state = initialState, action){
   switch(action.type){
     case UPDATE_USER:
       const {username,id} = action.payload
-      console.log('ACTION PAYLOAD', action.payload)
       return {...state,username,id}
     case CLEAR_USER:
       return { ...initialState}

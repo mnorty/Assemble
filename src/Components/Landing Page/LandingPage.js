@@ -11,9 +11,7 @@ class LandingPage extends Component {
     await axios
       .get('/auth/details')
       .then((res) => {
-        console.log('response from authController',res.data)
         this.props.updateUser(res.data)
-        console.log('update user hit in didmount')
       })
       .catch((err) => {
         this.props.history.push('/')
@@ -28,7 +26,7 @@ class LandingPage extends Component {
 		})
 	}
     render() {
-      console.log(this.props)
+      console.log('Username: ',this.props.username,'|', 'User Id: ',this.props.id)
       return (
         <div>
            <header className='PageHeader'>Your Current Projects</header>
@@ -49,7 +47,6 @@ class LandingPage extends Component {
   }
   
   function mapStateToProps(reduxState) {
-    console.log(reduxState)
     return {
       username: reduxState.user.username,
       id: reduxState.user.id
