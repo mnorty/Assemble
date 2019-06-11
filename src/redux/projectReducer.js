@@ -10,7 +10,7 @@ const REQUEST_PROJECTS = 'REQUEST_PROJECTS';
 export const requestProjects = () => {
   console.log('got to projectreducer')
   let project = axios.get('/auth/project').then(res => res.data);
-  console.log('hi',project)
+  console.log('Request Made for Projects, waiting Response',project)
   return {
     type: REQUEST_PROJECTS,
     payload: project

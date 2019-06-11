@@ -12,11 +12,11 @@ class Project extends Component {
 
   componentDidMount() {
     this.props.requestProjects()
-    console.log('requested Projects')
-    console.log('state of Project.js',this.state)
+    console.log('Request Projects firing')
   }
 
   render() {
+    console.log('PROPS FOR PROJECTS.JS: ', this.props)
     // const Project = this.props.project.map((project => <Card key={project.id} project={project} />))
     return (
       <div className='news-container'>

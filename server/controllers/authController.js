@@ -38,9 +38,7 @@ module.exports = {
     const {session} = req
     if(session.user){
       const details = await db.get_user_details({id: session.user.id})
-      console.log('got to line 41 in getDetails', session.user.id)
       const {id} = details[0]
-      console.log(id)
       return res
         .status(200)
         .send({
@@ -79,8 +77,16 @@ module.exports = {
   },
 
   getProject: async (req,res) => {
-    console.log('made it to getProject')
-      }
-}
+    console.log('made it')
+    const dbInstance = await req.app.get('db');
+
+    dbInstance.get_projects()
+      .then(project => res.status(200).send(project))
+      .catch(err => {
+        res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });
+        console.log(err)
+      });
+    }
+  }
 
 

@@ -36,7 +36,7 @@ class LandingPage extends Component {
             </div>
             <div className='OwnedProjects'>Owned Projects
               <div className='ProjectDisplay'>
-                {/* <Project/> */}
+                <Project/>
               </div>
               <Link to='/CreateProject'>Create New Project</Link>
               </div>
