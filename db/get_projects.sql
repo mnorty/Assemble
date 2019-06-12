@@ -1,2 +1,2 @@
 select * from project
-where id = 1
+where creator_id = ${id}
