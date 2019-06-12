@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Muli', sans-serif;
+  background-image: url('./pictures//8430.jpg')
 }
 
 .App-logo {
@@ -10,7 +11,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

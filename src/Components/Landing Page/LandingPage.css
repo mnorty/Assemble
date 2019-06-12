@@ -1,16 +1,17 @@
 .PageHeader{
-  background-color:lightgray;
+  background-color:#414650;
   display: flex;
   justify-content: center;
   align-items:center;
   font-size: 2em;
-  height:5vh;
+  height:8vh;
+  color:#FEFDF9
 }
 
 .OwnedProjects{
-  background-color:lightcoral;
+  background-color:lightgray;
   width:100vw;
-  min-height:42.5vh;
+  min-height:46vh;
   display: flex;
   justify-content: center;
   align-items:center;
@@ -20,12 +21,12 @@
 .ProjectDisplay{
   min-height:35vh;
   width:100%;
-  background-color:lightgreen
+  background-color:grey
 }
 
 .AssignedProjects{
-  background-color: aquamarine;
-  min-height:42.5vh;
+  background-color: lightgray;
+  min-height:46vh;
   width:100vw;
   display: flex;
   justify-content: center;

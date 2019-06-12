@@ -1,9 +1,10 @@
+
 .loginFormContainer{
   min-height:55vh;
   display: flex;
   flex-direction: column;
   align-items:center;
-  background-color:gainsboro;
+  /* background-color:gainsboro; */
   color:#414650;
 }
 

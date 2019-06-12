@@ -1,13 +1,46 @@
+.background{
+  background-image: url('../../pictures/8430.jpg');
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .top{
   /* background-color:lightblue; */
   height:45vh;
   display:flex;
   align-items: center;
+  justify-content:center;
+  /* background-image: url('../../pictures/8430.jpg') */
 }
 
+/* .loginContainer{
+  background-color:red;
+  width: 50vw;
+  
+} */
 .welcome{
-  color:#FEFDF9;
-  font-size: 2em;
+  color:black;
+  font-size: 3em;
   font-family: 'Muli', sans-serif;
   margin-left:.35em;
+}
+
+@media only screen and (min-width: 401px) and (max-width: 960px){
+  .welcome{
+    background-color:blue;
+  }
+}
+
+@media only screen and (min-width: 961px){
+  .loginContainer{
+    max-width:50vw;
+  }
+
+  .welcome{
+    font-size:5em;
+    margin-left:0;
+
+  }
 }

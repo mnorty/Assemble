@@ -29,12 +29,12 @@ class LandingPage extends Component {
       console.log('Username: ',this.props.username,'|', 'User Id: ',this.props.id)
       return (
         <div>
-           <header className='PageHeader'>Your Current Projects</header>
+           {/* <header className='PageHeader'>Your Current Projects</header> */}
             <div className='PageHeader' id='intro'>
               <h1>Welcome {this.props.username}!</h1>
-              <h1>User ID: {this.props.id}</h1>
             </div>
-            <div className='OwnedProjects'>Owned Projects
+            <div className='OwnedProjects'>
+                <div> Owned Projects</div> 
               <div className='ProjectDisplay'>
                 <Project/>
               </div>
@@ -65,3 +65,6 @@ class LandingPage extends Component {
     mapStateToProps,
     mapDispatchToProps
   )(LandingPage)
+
+
+  //<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by kjpargeter - www.freepik.com</a> photo from here for landing

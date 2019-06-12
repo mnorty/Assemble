@@ -18,7 +18,7 @@ class Project extends Component {
   }
 
   render() {
-    // const Project = this.props.project.map((project => <Card key={project.id} project={project} />))
+    const Project = this.props.project.map((project => <Card key={project.id} project={project} />)) || []
     console.log(this.props)
     return (
       <div className='news-container'>

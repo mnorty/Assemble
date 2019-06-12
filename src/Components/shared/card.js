@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Card extends Component {
   render() {
-    const { title, link } = this.props.article;
+    const { title, link } = this.props.project;
     return (
       <div style={styles.container}>
         <p style={styles.p}><a style={styles.a} href={link}>{title}</a></p>

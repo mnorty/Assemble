@@ -20,9 +20,9 @@ class RegisterForm extends Component {
 		const {email, username, password } = this.state
 		axios
 			.post('/auth/register', {email, username, password })
-			// .then((res) => {
-			// 	this.props.history.push('/details')
-			// })
+			.then((res) => {
+				this.props.history.push('/LandingPage')
+			})
 			.catch((err) => {
 				swal({
 					text: 'Username has already been taken',
@@ -66,8 +66,8 @@ class RegisterForm extends Component {
 						onChange={this.handleRegisterInfoUpdate}
 					/>
 					<button className='regButton'>Register</button>
-				<h1 className='joinInvite'>Not a Member Yet? Join 
-					<Link to='/'> Here </Link>
+				<h1 className='joinInvite'> 
+					<Link to='/'> Sign In </Link>
 				</h1>
 				</form>
 			</>
