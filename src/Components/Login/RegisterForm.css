@@ -1,7 +1,7 @@
 .regForm{
   display: flex;
   flex-direction: column;
-
+  
 }
 
 .input{
@@ -21,4 +21,9 @@
 
 .welcome{
   margin-left:-1em;
+}
+
+.joinInvite{
+  margin-top:1em;
+  font-size:1.3em
 }

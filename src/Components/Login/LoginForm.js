@@ -57,7 +57,7 @@ class LoginForm extends Component {
 					/>
 					<button className='regButton'>Log In</button>
 				</form>
-				<h1 className='joinInvite'>Not a Member Yet? Join 
+				<h1 id='joinInvite'>Not a Member Yet? Join 
 					<Link to='/register'> Here </Link>
 				</h1>
 			</div>

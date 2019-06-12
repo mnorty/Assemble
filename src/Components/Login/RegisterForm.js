@@ -3,6 +3,7 @@ import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 import './RegisterForm.css'
 import swal from '@sweetalert/with-react'
+import {Link} from 'react-router-dom'
 
 class RegisterForm extends Component {
 	constructor() {
@@ -42,32 +43,32 @@ class RegisterForm extends Component {
 	render() {
 		return (
 			<>
-				<form onSubmit={this.handleUserRegister} className='regForm'>
-					<h1>Email:</h1>
+				<form onSubmit={this.handleUserRegister} className='regForm' id='inputOne'>
 					<input
 						className='input'
 						type='text'
-						placeholder='Example@email.com'
+						placeholder='Email'
 						name='email'
 						onChange={this.handleRegisterInfoUpdate}
 					/>
-					<h1>UserName:</h1>
 					<input
 						className='input'
 						type='text'
-						placeholder='What"s your Alias?'
+						placeholder='UserName'
 						name='username'
 						onChange={this.handleRegisterInfoUpdate}
 					/>
-					<h1>Password:</h1>
 					<input
 						className='input'
 						type='password'
-						placeholder='Super Secret Shhhhh'
+						placeholder='Password'
 						name='password'
 						onChange={this.handleRegisterInfoUpdate}
 					/>
 					<button className='regButton'>Register</button>
+				<h1 className='joinInvite'>Not a Member Yet? Join 
+					<Link to='/'> Here </Link>
+				</h1>
 				</form>
 			</>
 		)
