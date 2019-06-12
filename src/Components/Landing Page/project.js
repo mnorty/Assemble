@@ -19,10 +19,9 @@ class Project extends Component {
 
   render() {
     const Project = this.props.project.map((project => <Card key={project.id} project={project} />)) || []
-    console.log(this.props)
     return (
       <div className='news-container'>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJPIQdUkzKSdWlBXckuUa17xaIL2eeueIF-_X6YHw024EnX7a-" alt="" style={styles.logo} />
+        {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJPIQdUkzKSdWlBXckuUa17xaIL2eeueIF-_X6YHw024EnX7a-" alt="" style={styles.logo} /> */}
         {this.props.loading ? <Loading /> : <div>{Project}</div>}
       </div>
     )
