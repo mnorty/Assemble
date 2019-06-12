@@ -1,0 +1,13 @@
+.top{
+  /* background-color:lightblue; */
+  height:45vh;
+  display:flex;
+  align-items: center;
+}
+
+.welcome{
+  color:#FEFDF9;
+  font-size: 2em;
+  font-family: 'Muli', sans-serif;
+  margin-left:.35em;
+}

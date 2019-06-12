@@ -8,7 +8,7 @@ import 'reset-css'
   const App = () => {
   return (//Hashrouter is what lets us navigate between pages easily,the Router in the JSX is providing a index of visitable pages. if we remove login, the button is still there bt it doesnt go anywhere. Navbar isnt in the router because we want that to be displayed with all components.
    <HashRouter> 
-     <Navbar/>
+     {/* <Navbar/> */}
      {router} 
    </HashRouter>
   );

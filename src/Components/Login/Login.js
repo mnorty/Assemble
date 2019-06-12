@@ -17,6 +17,9 @@ class Login extends Component {
 	render() {
 		return (
 			<div>
+				<header className='top'>
+					<div className='welcome'>Welcome to Assemble</div>
+				</header>
 				<LoginForm />
 			</div>
 		)

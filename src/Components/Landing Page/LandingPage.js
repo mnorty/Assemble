@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {updateUser, clearUser} from '../../redux/userReducer'
 import './LandingPage.css'
 import axios from 'axios';
-import Project from './Project.js'
+import Project from './project'
 import {connect} from 'react-redux'
 
 class LandingPage extends Component {

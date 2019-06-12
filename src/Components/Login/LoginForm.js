@@ -40,11 +40,7 @@ class LoginForm extends Component {
 	render() {
 		return (
 			<div className='loginFormContainer'>
-				<div className='descriptionBox'>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel debitis aspernatur unde in quo officiis asperiores corporis neque eaque eos similique voluptas, pariatur accusamus voluptatum fugiat, earum excepturi autem quia?
-				</div>
-				<h1>Login</h1>
-				<form onSubmit={this.handleUserLogin} className='loginFields'>
+				<form onSubmit={this.handleUserLogin} className='loginFields' id='inputOne'>
 					<input
 						className='input'
 						type='text'

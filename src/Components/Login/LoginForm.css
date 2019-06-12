@@ -1,9 +1,10 @@
 .loginFormContainer{
-  min-height:90vh;
+  min-height:55vh;
   display: flex;
   flex-direction: column;
   align-items:center;
-  background-color:#1A1B1A
+  background-color:gainsboro;
+  color:#414650;
 }
 
 .regForm{
@@ -20,6 +21,7 @@
   margin-bottom:2em;
   border-radius: 10px;
   font-size:1.3em;
+  font-family: 'Muli', sans-serif;
 }
 
 .loginFields{
@@ -37,11 +39,16 @@
 
 .regButton{
   height:3em;
-  background-color:#9C1F45;
-  border-radius:10px
+  background-color:#414650;
+  border-radius:10px;
+  margin-top:2em;
 }
 
 .joinInvite{
-  margin-top:2em;
+  margin-top:4.5em;
   font-size:1.3em
+}
+
+#inputOne{
+  margin-top:3em;
 }
