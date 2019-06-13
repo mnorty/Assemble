@@ -17,6 +17,12 @@ class Project extends Component {
 
   }
 
+  handleDeleteProject = (data) => {
+    this.setState({
+      project:data
+    })
+  }
+
   render() {
     const Project = this.props.project.map((project => <Card key={project.id} project={project} />)) || []
     return (
@@ -34,10 +40,3 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, { requestProjects })(Project);
 
-
-const styles = {
-  logo: {
-    width: '250px',
-    margin: '50px 0px'
-  }
-}

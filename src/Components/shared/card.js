@@ -1,13 +1,59 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 export default class Card extends Component {
+
+  handleDeleteProject = () => {
+    axios.delete(`/auth/deleteproject/${this.props.project.id}`)
+    //this provides the url and the id we want to delete, it gets the logic for how to handle the delete from controller.js
+    .then(res => {
+        this.props.deleteproject(res.data)
+        // this is fired after we recieve the response from the server, res.data doesnt exist until we get a resonse from the server. 
+    })
+}
+
   render() {
-    const { title, link } = this.props.project;
+    const { title, link ,due_date} = this.props.project;
     return (
-      <div style={styles.container}>
-        <p style={styles.p}><a style={styles.a} href={link}>{title}</a></p>
+      <div style={styles.container} className='cardContainer'>
+        <p style={styles.p}><a style={styles.a} href={link}>Name:{title} </a></p>
+        <p> Due Date: {due_date}</p>
         <a style={styles.a} href={link}>
-          <button style={styles.button}>></button>
+          {/* <button style={styles.button}>More Info</button>
+          <button onClick={this.handleDeleteProject}>Delete</button> */}
+            <div>
+              <div>
+                <Grid container spacing={2}>
+                <Grid container spacing={1} direction="column" alignItems="center">
+                  <Grid item>
+                    <ButtonGroup variant='contained' size='small' >
+                    <Button>Edit</Button> 
+                    
+                    {/* <Button>View</Button>  */}
+                    </ButtonGroup>
+
+                    </Grid>
+                  </Grid>
+              </Grid>
+              </div>
+              <div>
+                <Grid container spacing={2}>
+                <Grid container spacing={1} direction="column" alignItems="center">
+                  <Grid item>
+                    <ButtonGroup variant='contained' size='small' >
+                    
+                    <Button>Delete</Button> 
+                    {/* <Button>View</Button>  */}
+                    </ButtonGroup>
+
+                    </Grid>
+                  </Grid>
+              </Grid>
+              </div>
+            </div>
         </a>
       </div>
     )
@@ -17,7 +63,9 @@ export default class Card extends Component {
 
 const styles = {
   container: {
-    width: '800px',
+    width: '90vw',
+    height:'7vh',
+    marginLeft:'5vw',
     textAlign: 'left',
     // border: 'gray 1px solid',
     borderRadius: '8px',

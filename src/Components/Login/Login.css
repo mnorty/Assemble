@@ -17,8 +17,7 @@
 
 /* .loginContainer{
   background-color:red;
-  width: 50vw;
-  
+  width: 100vw;
 } */
 .welcome{
   color:black;
@@ -35,12 +34,17 @@
 
 @media only screen and (min-width: 961px){
   .loginContainer{
+    margin-top:5vh;
     max-width:50vw;
+    background-color:#96D6EF;
+    margin-bottom:15vh;
+  }
+  .welcome{
+    font-size:3em;
+    margin-left:0;
   }
 
-  .welcome{
-    font-size:5em;
-    margin-left:0;
-
+  .top{
+    height:20vh;
   }
 }
