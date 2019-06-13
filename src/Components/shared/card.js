@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import refreshProjects from '../../redux/projectReducer'
 import MaterialEdit from '../ManagerEditProject/MaterialEdit'
+import swal from '@sweetalert/with-react'
 
 export default class Card extends Component {
 
@@ -17,9 +18,25 @@ export default class Card extends Component {
     })
 }
 
-  // handleEditProject = () => {
-  //   axios.put(`/auth/editProject/${this.props.project.id}`)
-  // }
+  handleDeleteButton = () => {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this Project!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((handleDeleteProject) => {
+      axios.delete(`/auth/deleteproject/${this.props.project.id}`)
+      if (handleDeleteProject) {
+        swal("Poof! Your Project has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your Project is safe!");
+      }
+    });
+  }
 
   render() {
     const { title, link ,due_date} = this.props.project;
@@ -51,10 +68,9 @@ export default class Card extends Component {
                   <Grid item>
                     <ButtonGroup variant='contained' size='small' >
                     
-                    <Button onClick={this.handleDeleteProject}>Delete</Button> 
+                    <Button onClick={this.handleDeleteButton}>Delete</Button> 
                     {/* <Button>View</Button>  */}
                     </ButtonGroup>
-
                     </Grid>
                   </Grid>
               </Grid>
