@@ -24,7 +24,7 @@ export default function FormDialog(props) {
   }
 
   function handleEditProject()  {
-    axios.put(`/auth/editProject/${props.projectId}`)
+    axios.put(`/auth/editProject/${props.projectId}`,{title,due_date,description})
   }
 
   function doubleFunction() {
