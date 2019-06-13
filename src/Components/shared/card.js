@@ -26,9 +26,9 @@ export default class Card extends Component {
       buttons: true,
       dangerMode: true,
     })
-    .then((handleDeleteProject) => {
-      axios.delete(`/auth/deleteproject/${this.props.project.id}`)
-      if (handleDeleteProject) {
+    .then((willDelete) => {
+      if (willDelete) {
+        axios.delete(`/auth/deleteproject/${this.props.project.id}`)
         swal("Poof! Your Project has been deleted!", {
           icon: "success",
         });
