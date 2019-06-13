@@ -3,6 +3,7 @@ import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import refreshProjects from '../../redux/projectReducer'
 
 export default class Card extends Component {
 
@@ -10,7 +11,7 @@ export default class Card extends Component {
     axios.delete(`/auth/deleteproject/${this.props.project.id}`)
     .then(res => {
         console.log('handleDeleteProject',this.props)
-        // this.deleteproject(res.data)
+        refreshProjects(res.data) //we imported this above, we are passing in res.data,as the input for it.
 
     })
 }

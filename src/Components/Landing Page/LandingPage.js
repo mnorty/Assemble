@@ -16,7 +16,6 @@ class LandingPage extends Component {
       .catch((err) => {
         this.props.history.push('/')
       })
-
   }
 
   handleLogout = () => {

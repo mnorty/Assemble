@@ -93,9 +93,9 @@ module.exports = {
     deleteProject: async (req, res) => {
       console.log('made it to DELETEPROJECT', req.params)
       const dbInstance = await req.app.get('db');
-
-      const {id} = req.params 
-      dbInstance.delete_project({id})
+      const id = req.session.user.id
+      const project_id = req.params.id 
+      dbInstance.delete_project({project_id,id})
       .then(project => res.status(200).send(project))
       .catch(err => {
         res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });
