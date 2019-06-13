@@ -91,10 +91,10 @@ module.exports = {
     },
 
     deleteProject: async (req, res) => {
-      console.log('made it to DELETEPROJECT', req.session)
+      console.log('made it to DELETEPROJECT', req.params)
       const dbInstance = await req.app.get('db');
 
-      const {id} = 5
+      const {id} = req.params 
       dbInstance.delete_project({id})
       .then(project => res.status(200).send(project))
       .catch(err => {

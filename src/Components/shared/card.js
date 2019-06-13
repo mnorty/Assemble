@@ -8,9 +8,9 @@ export default class Card extends Component {
 
   handleDeleteProject = () => {
     axios.delete(`/auth/deleteproject/${this.props.project.id}`)
-
     .then(res => {
-        this.props.deleteproject(res.data)
+        console.log('handleDeleteProject',this.props)
+        // this.deleteproject(res.data)
 
     })
 }
