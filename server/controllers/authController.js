@@ -91,7 +91,6 @@ module.exports = {
     },
 
     deleteProject: async (req, res) => {
-      console.log('made it to DELETEPROJECT', req.params)
       const dbInstance = await req.app.get('db');
       const id = req.session.user.id
       const project_id = req.params.id 
@@ -105,10 +104,19 @@ module.exports = {
   },
 
     editProject: (req,res) => {
-      console.log('Getting to editProject')
+      console.log('Getting to editProject',req.session.user.id,req.params)
       const dbInstance = req.app.get('db');
       const id = req.session.user.id
+      const title = 'working'
       const project_id = req.params.id
+      dbInstance.edit_project({project_id,id,title})
+      // .then(project => res.status(200).send(project))
+      // console.log(project)
+      .catch(err => {
+        res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });
+        console.log(err)
+      });
+      res.status
     }
 
   

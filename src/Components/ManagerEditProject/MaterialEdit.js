@@ -9,11 +9,12 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
-
+  
   function handleClickOpen() {
     setOpen(true);
+    
   }
-
+  
   function handleClose() {
     setOpen(false);
   }
@@ -59,7 +60,7 @@ export default function FormDialog() {
             Cancel
           </Button>
           <Button onClick={handleClose} color="primary">
-            Subscribe
+            Edit Project
           </Button>
         </DialogActions>
       </Dialog>
