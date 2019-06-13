@@ -8,10 +8,10 @@ export default class Card extends Component {
 
   handleDeleteProject = () => {
     axios.delete(`/auth/deleteproject/${this.props.project.id}`)
-    //this provides the url and the id we want to delete, it gets the logic for how to handle the delete from controller.js
+
     .then(res => {
         this.props.deleteproject(res.data)
-        // this is fired after we recieve the response from the server, res.data doesnt exist until we get a resonse from the server. 
+
     })
 }
 
@@ -45,7 +45,7 @@ export default class Card extends Component {
                   <Grid item>
                     <ButtonGroup variant='contained' size='small' >
                     
-                    <Button>Delete</Button> 
+                    <Button onClick={this.handleDeleteProject}>Delete</Button> 
                     {/* <Button>View</Button>  */}
                     </ButtonGroup>
 
