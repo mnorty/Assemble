@@ -63,7 +63,6 @@ module.exports = {
   },
   createproject: async (req,res) => {
     const {title,due_date,description,creator_id} = req.body
-    console.log(req.body)
     const db = req.app.get('db')
     const userFound = await db.check_project_title({title})//passing that in as an object lets us use its name in the sql command
     if (userFound[0]) return res.status(409).send('title already exists')
@@ -73,14 +72,12 @@ module.exports = {
       description,
       creator_id
     })
-    console.log('Project Created',req.body)
+    console.log('Project Created')
   },
 
   getProject: async (req,res) => {
-    console.log('made it')
     const dbInstance = await req.app.get('db');
     const id = req.session.user.id
-    console.log(req.session)
     dbInstance.get_projects({id})
       
       .then(project => res.status(200).send(project))
@@ -104,9 +101,9 @@ module.exports = {
   },
 
     editProject: (req,res) => {
-      console.log('Getting to editProject',req.session.user.id,req.params)
+      console.log('Getting to editProject',req.params)
       const dbInstance = req.app.get('db');
-      const title = 'working'
+      const title = 'Sweet'
       const project_id = req.params.id
       dbInstance.edit_project({project_id,title})
       // .then(project => res.status(200).send(project))

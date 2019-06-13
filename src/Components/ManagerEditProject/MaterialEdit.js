@@ -10,6 +10,9 @@ import axios from 'axios'
 
 export default function FormDialog(props) {
   const [open, setOpen] = React.useState(false);
+  const [title,setTitle] = React.useState('')
+  const [due_date,setDue_date] = React.useState('')
+  const [description,setDescription] =React.useState('')
   
   function handleClickOpen() {
     setOpen(true);
@@ -28,7 +31,7 @@ export default function FormDialog(props) {
     handleClose();
     handleEditProject();
   }
-  console.log(props)
+  console.log(title,due_date,description)
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen} >
@@ -47,6 +50,7 @@ export default function FormDialog(props) {
             label="Project Name"
             type="text"
             fullWidth
+            onChange={(event) => setTitle(event.target.value)}
           />
           <TextField
             autoFocus
@@ -55,6 +59,7 @@ export default function FormDialog(props) {
             label=""
             type="date"
             fullWidth
+            onChange={(event) => setDue_date(event.target.value)}
           />
           <TextField
             autoFocus
@@ -63,6 +68,7 @@ export default function FormDialog(props) {
             label="Description"
             type="text"
             fullWidth
+            onChange={(event) => setDescription(event.target.value)}
           />
         </DialogContent>
         <DialogActions>
