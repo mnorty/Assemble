@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import refreshProjects from '../../redux/projectReducer'
+import MaterialEdit from '../ManagerEditProject/MaterialEdit'
 
 export default class Card extends Component {
 
@@ -60,6 +61,7 @@ export default class Card extends Component {
               </div>
             </div>
         </a>
+        <MaterialEdit/>
       </div>
     )
   }
