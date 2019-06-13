@@ -102,8 +102,14 @@ module.exports = {
         console.log(err)
       });
       res.status(200)
-
   },
+
+    editProject: (req,res) => {
+      console.log('Getting to editProject')
+    }
+
+  
+
   }
 
 

@@ -16,6 +16,10 @@ export default class Card extends Component {
     })
 }
 
+  handleEditProject = () => {
+    axios.put(`/auth/editProject/${this.props.project.id}`)
+  }
+
   render() {
     const { title, link ,due_date} = this.props.project;
     return (
@@ -31,7 +35,7 @@ export default class Card extends Component {
                 <Grid container spacing={1} direction="column" alignItems="center">
                   <Grid item>
                     <ButtonGroup variant='contained' size='small' >
-                    <Button>Edit</Button> 
+                    <Button onClick={this.handleEditProject}>Edit</Button> 
                     
                     {/* <Button>View</Button>  */}
                     </ButtonGroup>
