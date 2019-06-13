@@ -106,10 +106,9 @@ module.exports = {
     editProject: (req,res) => {
       console.log('Getting to editProject',req.session.user.id,req.params)
       const dbInstance = req.app.get('db');
-      const id = req.session.user.id
       const title = 'working'
       const project_id = req.params.id
-      dbInstance.edit_project({project_id,id,title})
+      dbInstance.edit_project({project_id,title})
       // .then(project => res.status(200).send(project))
       // console.log(project)
       .catch(err => {

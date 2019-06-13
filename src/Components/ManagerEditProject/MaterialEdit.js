@@ -6,8 +6,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import axios from 'axios'
 
-export default function FormDialog() {
+export default function FormDialog(props) {
   const [open, setOpen] = React.useState(false);
   
   function handleClickOpen() {
@@ -19,9 +20,18 @@ export default function FormDialog() {
     setOpen(false);
   }
 
+  function handleEditProject()  {
+    axios.put(`/auth/editProject/${props.projectId}`)
+  }
+
+  function doubleFunction() {
+    handleClose();
+    handleEditProject();
+  }
+  console.log(props)
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen} >
         Edit
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -59,7 +69,7 @@ export default function FormDialog() {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={doubleFunction} color="primary">
             Edit Project
           </Button>
         </DialogActions>

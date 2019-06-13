@@ -17,9 +17,9 @@ export default class Card extends Component {
     })
 }
 
-  handleEditProject = () => {
-    axios.put(`/auth/editProject/${this.props.project.id}`)
-  }
+  // handleEditProject = () => {
+  //   axios.put(`/auth/editProject/${this.props.project.id}`)
+  // }
 
   render() {
     const { title, link ,due_date} = this.props.project;
@@ -31,20 +31,20 @@ export default class Card extends Component {
           {/* <button style={styles.button}>More Info</button>
           <button onClick={this.handleDeleteProject}>Delete</button> */}
             <div>
-              <div>
+              {/* <div>
                 <Grid container spacing={2}>
                 <Grid container spacing={1} direction="column" alignItems="center">
                   <Grid item>
                     <ButtonGroup variant='contained' size='small' >
                     <Button onClick={this.handleEditProject}>Edit</Button> 
                     
-                    {/* <Button>View</Button>  */}
+                    <Button>View</Button> 
                     </ButtonGroup>
 
                     </Grid>
                   </Grid>
               </Grid>
-              </div>
+              </div> */}
               <div>
                 <Grid container spacing={2}>
                 <Grid container spacing={1} direction="column" alignItems="center">
@@ -61,7 +61,7 @@ export default class Card extends Component {
               </div>
             </div>
         </a>
-        <MaterialEdit/>
+        <MaterialEdit projectId={this.props.project.id}/>
       </div>
     )
   }
