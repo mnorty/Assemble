@@ -86,7 +86,7 @@ export default class AdminCard extends Component {
 
 const styles = {
   container: {
-    width: '90vw',
+    width: '90%',
     height:'7vh',
     marginLeft:'5vw',
     textAlign: 'left',

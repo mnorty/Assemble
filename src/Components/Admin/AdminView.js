@@ -11,8 +11,8 @@ const AdminView = () => {
       </header>
       <body className='adminbody'>
         <div className='adminUserContainer'>
-          <div className='userHeader'>user header</div>
-          <div className='adminUserDisplay'>User Display goes here
+          <div className='userHeader'>Current Users</div>
+          <div className='adminUserDisplay'>
             <AdminUserView/>
           </div>
         </div>

@@ -25,21 +25,19 @@ class AdminUserView extends Component {
   // }
 
   render() {
-    console.log(this.props)
     const users = this.props.users.map((users => <AdminCard key={users.id} users={users} />)) || []
     return (
       <>
       <div className='news-container'>
         {this.props.loading ? <Loading /> : <div>{users}</div>}
       </div>
-      <h1>DISPLAY</h1>
+      <h1></h1>
       </>
     )
   }
 }
 
 function mapStateToProps(state) {
-  console.log(state.admin.users,this.props)
   return state.admin;
 }
 
