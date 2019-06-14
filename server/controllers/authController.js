@@ -101,11 +101,11 @@ module.exports = {
   },
 
     editProject: (req,res) => {
-      console.log('Getting to editProject',req.params,req.props)
+      console.log('Getting to editProject',req.params,req.body)
       const dbInstance = req.app.get('db');
-      const title = req.params.title
-      const description = req.params.description
-      const due_date = req.params.due_date
+      const title = req.body.title
+      const description = req.body.description
+      const due_date = req.body.due_date
       const project_id = req.params.id
       dbInstance.edit_project({project_id,title,description,due_date})
       // .then(project => res.status(200).send(project))
