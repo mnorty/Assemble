@@ -12,7 +12,7 @@ class Project extends Component {
 
   componentDidMount() {
     this.props.requestProjects()
-    console.log('Request Projects firing')
+    console.log('Request Projects firing',this.props)
     
 
   }

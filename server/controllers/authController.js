@@ -101,7 +101,7 @@ module.exports = {
   },
 
     editProject: (req,res) => {
-      console.log('Getting to editProject',req.params,req.body)
+      console.log('Getting to editProject',req.params,req.body) //we use req.body because it is being passed through a axios request, for a put request all the information is in the body.
       const dbInstance = req.app.get('db');
       const title = req.body.title
       const description = req.body.description
@@ -115,7 +115,19 @@ module.exports = {
         console.log(err)
       });
       res.status
-    }
+    },
+
+    getUsers: async (req,res) => {
+      const dbInstance = await req.app.get('db');
+      console.log('Made it to Get Users')
+      dbInstance.get_users()
+        
+        .then(users => res.status(200).send(users))
+        .catch(err => {
+          res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });
+          console.log(err)
+        });
+      },
 
   
 
