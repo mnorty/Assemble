@@ -131,8 +131,8 @@ module.exports = {
 
       deleteUser: async (req, res) => {
         const dbInstance = await req.app.get('db');
-        console.log('Made it to AuthController')
-        const id = req.session.user.id 
+        console.log('Made it to AuthController',req.params,req.body)
+        const id = req.params.id 
         dbInstance.delete_user({id})
         .then(user => res.status(200).send(user))
         .catch(err => {
