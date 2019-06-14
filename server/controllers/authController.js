@@ -129,6 +129,19 @@ module.exports = {
         });
       },
 
+      deleteUser: async (req, res) => {
+        const dbInstance = await req.app.get('db');
+        console.log('Made it to AuthController')
+        const id = req.session.user.id 
+        dbInstance.delete_user({id})
+        .then(user => res.status(200).send(user))
+        .catch(err => {
+          res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });
+          console.log(err)
+        });
+        res.status(200)
+    },
+
   
 
   }

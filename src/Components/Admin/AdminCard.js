@@ -9,10 +9,10 @@ import swal from '@sweetalert/with-react'
 
 export default class AdminCard extends Component {
 
-  handleDeleteProject = () => {
-    axios.delete(`/auth/deleteproject/${this.props.project.id}`)
+  handleDeleteUser = () => {
+    axios.delete(`/auth/deleteUser/${this.props.users.id}`)
     .then(res => {
-        console.log('handleDeleteProject',this.props)
+        console.log('handleDeleteUser',this.props)
         refreshProjects(res.data) //we imported this above, we are passing in res.data,as the input for it.
 
     })
@@ -28,7 +28,7 @@ export default class AdminCard extends Component {
     })
     .then((willDelete) => {
       if (willDelete) {
-        axios.delete(`/auth/deleteproject/${this.props.project.id}`)
+        axios.delete(`/auth/deleteUser/${this.props.users.id}`)
         swal("Poof! Your Project has been deleted!", {
           icon: "success",
         });
