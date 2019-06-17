@@ -31,7 +31,6 @@ class AdminUserView extends Component {
       <div className='news-container'>
         {this.props.loading ? <Loading /> : <div>{users}</div>}
       </div>
-      <h1></h1>
       </>
     )
   }
