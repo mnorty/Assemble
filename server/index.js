@@ -5,6 +5,7 @@ const express = require('express'),
       auth_ctrl = require('./controllers/authController')
 const app = express()
 const {CONNECTION_STRING, SERVER_PORT,SESSION_SECRET} = process.env
+const path = require('path')
 
 app.use(express.json())
 app.use(session({
@@ -33,3 +34,7 @@ app.delete('/auth/deleteproject/:id', auth_ctrl.deleteProject)
 app.delete('/auth/deleteUser/:id',auth_ctrl.deleteUser)
 app.put('/auth/editProject/:id', auth_ctrl.editProject)
 app.get('/auth/adminUserGet', auth_ctrl.getUsers)
+
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
