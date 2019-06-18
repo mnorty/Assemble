@@ -16,6 +16,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60
   }
 }))
+app.use(express.static(`${__dirname}/../build`));
 
 massive(CONNECTION_STRING).then((db) => {
   app.set('db',db) // the 'db' is us choosing the name, and the database is the information, which matches the response from .then above.
@@ -35,6 +36,6 @@ app.delete('/auth/deleteUser/:id',auth_ctrl.deleteUser)
 app.put('/auth/editProject/:id', auth_ctrl.editProject)
 app.get('/auth/adminUserGet', auth_ctrl.getUsers)
 
-app.get('*', (req, res)=>{
-  res.sendFile(path.join(__dirname, '../build/index.html'));
-});
+// app.get('*', (req, res)=>{
+//   res.sendFile(path.join(__dirname, '../build/index.html'));
+// });

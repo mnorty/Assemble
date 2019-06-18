@@ -5,6 +5,7 @@ import './LandingPage.css'
 import axios from 'axios';
 import Project from './project'
 import {connect} from 'react-redux'
+import MaterialEdit from '../ManagerEditProject/MaterialEdit'
 
 class LandingPage extends Component {
   componentDidMount =  async () =>  {
@@ -38,6 +39,7 @@ class LandingPage extends Component {
                 <Project/>
               </div>
               <Link to='/CreateProject'>Create New Project</Link>
+              <MaterialEdit/>
               </div>
             <div className='AssignedProjects'>Assigned Projects
               <div className='ProjectDisplay'></div>
