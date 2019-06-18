@@ -35,6 +35,7 @@ app.delete('/auth/deleteproject/:id', auth_ctrl.deleteProject)
 app.delete('/auth/deleteUser/:id',auth_ctrl.deleteUser)
 app.put('/auth/editProject/:id', auth_ctrl.editProject)
 app.get('/auth/adminUserGet', auth_ctrl.getUsers)
+app.get('/auth/adminProjectGet', auth_ctrl.getAllProjects)
 
 // app.get('*', (req, res)=>{
 //   res.sendFile(path.join(__dirname, '../build/index.html'));

@@ -1,6 +1,7 @@
 import React from 'react'
 import './AdminUserView'
 import AdminUserView from './AdminUserView';
+import AdminProjectView from './AdminProjectView';
 // import {Link} from 'react-router-dom'
 
 
@@ -13,7 +14,7 @@ const AdminView = () => {
         <div className='adminUserContainer'>
           <div className='userHeader'>Current Projects</div>
           <div className='adminUserDisplay'>
-            <AdminUserView/>
+            <AdminProjectView/>
           </div>
         </div>
       </div>

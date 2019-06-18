@@ -16,6 +16,16 @@ export const requestUsers = () => {
     payload: users
   }
 }
+//getting here and sending the axios request
+export const requestProjects = () => {
+  console.log('Made it to RequestProjects Admin Reducer')
+  let users = axios.get('/auth/adminProjectGet').then(res => res.data);
+  console.log('Request Made for Projects, waiting Response',users)
+  return {
+    type: REQUEST_USERS,
+    payload: users
+  }
+}
 
 
 export default function (state = initialState, action) {
