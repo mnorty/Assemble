@@ -82,7 +82,7 @@ class Card extends Component {
               </div>
             </div>
         </a>
-        <MaterialEdit projectId={this.props.project.id}/>
+        <MaterialEdit projectId={this.props.project.id} creator_id={this.props.project.creator_id}/>
       </div>
     )
   }

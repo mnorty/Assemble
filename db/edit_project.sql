@@ -9,3 +9,6 @@ where id = ${project_id};
 
 update Project set title=${title}
 where id = ${project_id};
+
+select * from project 
+where creator_id = ${creator_id}

@@ -7,12 +7,15 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {refreshProjects} from '../../redux/projectReducer'
 
-export default function FormDialog(props) {
+function FormDialog(props) {
   const [open, setOpen] = React.useState(false);
   const [title,setTitle] = React.useState('')
   const [due_date,setDue_date] = React.useState('')
   const [description,setDescription] =React.useState('')
+  // const {creator_id} = props.creator_id
   
   function handleClickOpen() {
     setOpen(true);
@@ -24,8 +27,14 @@ export default function FormDialog(props) {
   }
 
   function handleEditProject()  {
-    axios.put(`/auth/editProject/${props.projectId}`,{title,due_date,description})
-  }
+    const creator_id = props.creator_id
+    console.log('At HandleEditProject', props)
+    axios.put(`/auth/editProject/${props.projectId}`,{title,due_date,description,creator_id})
+    .then(res => {
+      console.log('handleEditProject',props)
+      props.refreshProjects(res.data)
+  })
+}
 
   function doubleFunction() {
     handleClose();
@@ -83,3 +92,4 @@ export default function FormDialog(props) {
     </div>
   );
 }
+export default connect(null,{refreshProjects})(FormDialog)

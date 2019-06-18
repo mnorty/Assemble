@@ -110,9 +110,11 @@ module.exports = {
       const description = req.body.description
       const due_date = req.body.due_date
       const project_id = req.params.id
-      dbInstance.edit_project({project_id,title,description,due_date})
+      const creator_id = req.body.creator_id
+      dbInstance.edit_project({project_id,title,description,due_date,creator_id})
       // .then(project => res.status(200).send(project))
       // console.log(project)
+      .then(project => res.status(200).send(project))
       .catch(err => {
         res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });
         console.log(err)
