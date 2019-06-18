@@ -1,3 +1,5 @@
+
+
 .registrationContainer{
   display: flex;
   flex-direction: column;
@@ -5,16 +7,25 @@
   /* background-color:lightgray; */
   background-image: url('../../pictures/8430.jpg');
   min-height: 100vh;
+  width:100vw;
   
 }
 
-/* .top{
-  background-color: #3E414B;
-  min-height:45vh;
+.top{
+  height:30vh;
   min-width: 100vw;
   margin-top:0;
-} */
+  font-size:50px;
+  /* margin-left:2em; */
+}
 
-.welcome{
-  margin-left:.25em;
+.welcomeRegister{
+  margin-left:1em;
+}
+
+@media only screen and (min-width: 961px){
+  .input{
+    width:25vw;
+    height:2em;
+  }
 }

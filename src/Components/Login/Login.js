@@ -17,9 +17,9 @@ class Login extends Component {
 	render() {
 		return (
 			<div className='background'>
-				<div className='loginContainer'>
+				<div className='loginContainer' id='totot'>
 					<header className='top'>
-						<div className='welcome'>Welcome to Assemble</div>
+						<div className='welcomeLogin'>Welcome to Assemble</div>
 					</header>
 				
 				<LoginForm />

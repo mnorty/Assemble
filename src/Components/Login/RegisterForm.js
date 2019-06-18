@@ -42,7 +42,7 @@ class RegisterForm extends Component {
 	}
 	render() {
 		return (
-			<>
+			<div className='inputBox'>
 				<form onSubmit={this.handleUserRegister} className='regForm' id='inputOne'>
 					<input
 						className='input'
@@ -70,7 +70,7 @@ class RegisterForm extends Component {
 					<Link to='/'> Sign In </Link>
 				</h1>
 				</form>
-			</>
+			</div>
 		)
 	}
 }
