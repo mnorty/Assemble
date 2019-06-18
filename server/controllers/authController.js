@@ -75,6 +75,7 @@ module.exports = {
       creator_id,
       userid
     })
+    .then(project => res.status(200).send(project))
     console.log('Project Created')
   },
 
