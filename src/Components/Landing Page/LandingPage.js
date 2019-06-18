@@ -41,11 +41,11 @@ class LandingPage extends Component {
               </div>
               {/* <Link to='/CreateProject'>Create New Project</Link> */}
               <MaterialCreate userId ={this.props.id}/>
-              </div>
-            <div className='AssignedProjects'>Assigned Projects
-              <div className='ProjectDisplay'></div>
               <button to='/' className='logOutButton' onClick={this.handleLogout}>Log Out</button>
               </div>
+            {/* <div className='AssignedProjects'>Assigned Projects
+              <div className='ProjectDisplay'></div>
+              </div> */}
         </div>
       )}
   }
