@@ -3,17 +3,18 @@ import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
-import refreshProjects from '../../redux/projectReducer'
+  import {refreshProjects} from '../../redux/projectReducer'
 import MaterialEdit from '../ManagerEditProject/MaterialEdit'
 import swal from '@sweetalert/with-react'
+import {connect} from 'react-redux'
 
-export default class Card extends Component {
+class Card extends Component {
 
   handleDeleteProject = () => {
     axios.delete(`/auth/deleteproject/${this.props.project.id}`)
     .then(res => {
         console.log('handleDeleteProject',this.props)
-        refreshProjects(res.data) //we imported this above, we are passing in res.data,as the input for it.
+        this.props.refreshProjects(res.data) //we imported this above, we are passing in res.data,as the input for it.
 
     })
 }
@@ -29,6 +30,9 @@ export default class Card extends Component {
     .then((willDelete) => {
       if (willDelete) {
         axios.delete(`/auth/deleteproject/${this.props.project.id}`)
+        .then(res => {
+          console.log('handleDeleteProject',this.props)
+          this.props.refreshProjects(res.data)})
         swal("Poof! Your Project has been deleted!", {
           icon: "success",
         });
@@ -39,6 +43,7 @@ export default class Card extends Component {
   }
 
   render() {
+    console.log(this.props.project)
     const { title, link ,due_date} = this.props.project;
     return (
       <div style={styles.container} className='cardContainer'>
@@ -82,7 +87,7 @@ export default class Card extends Component {
     )
   }
 }
-
+export default connect(null,{refreshProjects})(Card)
 
 const styles = {
   container: {

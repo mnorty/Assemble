@@ -31,6 +31,7 @@ export default function (state = initialState, action) {
     case REQUEST_PROJECTS + '_FULFILLED':
       return { loading: false, project: action.payload}
     case REFRESH_PROJECTS:
+      console.log(action.payload)
       return { ...state,project: action.payload }//the ... state is a direct copy of our initial state. we then state that project = action.payload, which is project from refreshProjects(res.data), becuase two variables can't have the same name this updates the value to project.
     default:
       return state;
