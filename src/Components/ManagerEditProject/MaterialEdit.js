@@ -50,7 +50,7 @@ function FormDialog(props) {
         <DialogTitle id="form-dialog-title">Edit Project</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Feel Free to Edit any of the fields bellow
+            Feel Free to Edit any of the fields below
           </DialogContentText>
           <TextField
             autoFocus

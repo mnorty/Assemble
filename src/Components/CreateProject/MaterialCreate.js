@@ -50,7 +50,7 @@ function FormDialog(props) {
         <DialogTitle id="form-dialog-title">Create New Project</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Add the information for your new Project Bellow
+            Add the information for your new Project Below
           </DialogContentText>
           <TextField
             autoFocus
