@@ -10,6 +10,12 @@ import {connect} from 'react-redux'
 
 class Card extends Component {
 
+  formatDate = (date) => {
+    let dateStr = date.toString();
+    dateStr = new Date(dateStr).toUTCString();
+    return dateStr.split(' ').slice(0, 4).join(' ');
+}
+
   handleDeleteProject = () => {
     axios.delete(`/auth/deleteproject/${this.props.project.id}`)
     .then(res => {
@@ -45,10 +51,12 @@ class Card extends Component {
   render() {
     console.log(this.props.project)
     const { title, link ,due_date} = this.props.project;
+    
+    
     return (
       <div style={styles.container} className='cardContainer'>
         <p style={styles.p}><a style={styles.a} href={link}>Name:{title} </a></p>
-        <p> Due Date: {due_date}</p>
+        <p> Due Date: {this.formatDate(due_date)}</p>
         <a style={styles.a} href={link}>
           {/* <button style={styles.button}>More Info</button>
           <button onClick={this.handleDeleteProject}>Delete</button> */}
