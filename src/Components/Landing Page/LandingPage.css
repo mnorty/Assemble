@@ -19,10 +19,12 @@
 }
 
 .ProjectDisplay{
-  height:83vh;
+  padding-top:1vh;
+  height:82vh;
   width:100%;
-  background-color:grey
+  background-image: url('../../pictures/8430.jpg')
 }
+
 
 .AssignedProjects{
   background-color: lightgray;

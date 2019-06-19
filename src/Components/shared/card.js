@@ -71,7 +71,7 @@ class Card extends Component {
                 <Grid container spacing={2}>
                 <Grid container spacing={1} direction="column" alignItems="center">
                   <Grid item>
-                    <ButtonGroup variant='contained' size='small' >
+                    <ButtonGroup variant='outlined'color="primary" >
                     
                     <Button onClick={this.handleDeleteButton}>Delete</Button> 
                     {/* <Button>View</Button>  */}
@@ -92,7 +92,7 @@ export default connect(null,{refreshProjects})(Card)
 const styles = {
   container: {
     width: '90vw',
-    height:'7vh',
+    height:'10vh',
     marginLeft:'5vw',
     textAlign: 'left',
     // border: 'gray 1px solid',

@@ -35,7 +35,7 @@ class LandingPage extends Component {
               <h1>Welcome {this.props.username}!</h1>
             </div>
             <div className='OwnedProjects'>
-                <div> Owned Projects</div> 
+                <div className='yourProjects'> Owned Projects</div> 
               <div className='ProjectDisplay'>
                 <Project/>
               </div>

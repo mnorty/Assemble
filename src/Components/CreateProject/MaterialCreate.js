@@ -66,7 +66,7 @@ function FormDialog(props) {
             margin="dense"
             id="Due_Date"
             label=""
-            type="date"
+            type='date'
             fullWidth
             onChange={(event) => setDue_date(event.target.value)}
           />
