@@ -24,6 +24,9 @@ class Card extends Component {
 
     })
 }
+handleDescriptionButton = () => {
+  swal("Project Description", this.props.project.description);
+}
 
   handleDeleteButton = () => {
     swal({
@@ -33,6 +36,8 @@ class Card extends Component {
       buttons: true,
       dangerMode: true,
     })
+
+    
     .then((willDelete) => {
       if (willDelete) {
         axios.delete(`/auth/deleteproject/${this.props.project.id}`)
@@ -82,7 +87,7 @@ class Card extends Component {
                     <ButtonGroup variant='outlined'color="primary" >
                     
                     <Button onClick={this.handleDeleteButton}>Delete</Button> 
-                    {/* <Button>View</Button>  */}
+                    <Button onClick={this.handleDescriptionButton}>Description</Button> 
                     </ButtonGroup>
                     </Grid>
                   </Grid>
