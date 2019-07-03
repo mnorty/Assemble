@@ -56,7 +56,7 @@ function FormDialog(props) {
             autoFocus
             margin="dense"
             id="name"
-            label="Project Name"
+            label="This is like an input"
             type="text"
             fullWidth
             onChange={(event) => setTitle(event.target.value)}
